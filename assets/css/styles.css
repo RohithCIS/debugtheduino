@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+body{
+	font-family: 'Consolas', monospace;
+}
+
+/*NAVIGATION*/
+
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+  float: right;
+  top: 0;
+  display: inline-block;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Consolas', monospace;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.topnav a:hover {
+  background-color: #fff;
+  color: #00959C;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.topnav a.active {
+    background-color: #f2f2f2;
+    color: #00959C;
+}
+
+.topnav a:focus{
+    text-decoration: none;
+    color: white;
+}
+
+/*HOME*/
+
+.bghead{
+	height: 100vh;
+	display: block;
+	position: fixed;
+	background-image: url("../img/titback.jpg");
+	background-position: center center;
+	background-size: cover;
+	width: 100%;
+	top: 0;
+	z-index: -5;
+}
+
+.homeheader{
+	height: 15vh;
+	color: white;
+	font-family: 'Consolas', monospace;
+	border-bottom: 2px solid #f2f2f2;
+	display: block;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #00959C;
+	z-index: 5;
+}
+
+.tit{
+	color: white;
+	font-family: 'Consolas', monospace;
+	display: inline-block;
+	padding: 20px;
+	font-size: 40px;
+}
+
+.homebody{
+	margin-top: 15vh;
+	height: 85vh;
+}
+
+.logos{
+	text-align: left;
+	color: #00959C;
+	font-family: 'Consolas', monospace;
+	font-size: 40px;
+	padding:15px;
+	margin: 20px;
+	margin-top: 50px;
+	border-radius: 10px;
+	background-color: #f2f2f2;
+}
+
+.reg{
+	display: inline-block;
+	font-family: 'Consolas', monospace;
+}
+
+.reg:hover{
+	color: #f2f2f2;
+
+}
+
+.reg a{
+	text-decoration: none;
+	color: #00959C;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	font-size: 50px;
+	padding: 20px;
+}
+
+.reg a:hover{
+	text-decoration: none;
+	color: #f2f2f2;
+	border: 2px solid #f2f2f2;
+	background-color: transparent;
+}
+
+/*REGISTER*/
+
+.bodytab{
+	display: table;
+	width: 100%;
+}
+
+.tabcell{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.regform{
+	text-align: center;
+	width: 40vw;
+	display: inline-block;
+	padding: 20px;
+	font-family: 'Consolas', monospace;
+	color: #fff;
+}
+
+.regform input{
+	padding: 5px;
+	border-radius: 5px;
+	margin: 5px;
+	border: none;
+	height: 50px;
+	width: 75%;
+	font-size: 20px;
+	color: #00959C;
+}
+
+.regform button{
+	background-color: #f2f2f2;
+	color: #00959C;
+	border-radius: 5px;
+	border: none;
+	height: 50px;
+	width: 75%;
+	margin: 15px;
+	font-size: 25px;
+}
+
+.regform button:hover{
+	color: #f2f2f2;
+	background-color: transparent;
+	border: 2px solid #f2f2f2;
+}
+
+/*FOOTER*/
+
+.footerc{
+	
+}
+
+.fcont{
+	margin:20px;
+	background-color: #f2f2f2;
+	color: #00959C;
+	border-radius: 10px;
+	height: 100%;
+	padding: 10px;
+	text-align: center;
+	font-family: 'Consolas', monospace;
+}
