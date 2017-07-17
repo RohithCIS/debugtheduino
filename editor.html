@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Debug the Duino</title>
+	<title>Editor : Debug the Duino</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,32 +11,27 @@
 <body>
 	<div class="bghead"></div>
 	<div class="homeheader">
-		<h1 class="tit">Debug the Duino</h1>
+		<h1 class="tit">DEBUG THE DUINO</h1>
 		<div class="topnav">
-			<a class="active" href="">Home</a>
-			<a href="login.html">Login</a>
-			<a href="register.html">Register</a>
+			<a href="">Home</a>
 			<a href="">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
 		</div>
 	</div>
 	<div class="homebody">
-		<div class="col-md-4">
-		<div class="logos">
-			<p>An online event that catapults you to the world of <strong>Arduino!</strong></p>
-		</div>
-		</div>
-		<div class="col-md-4">
-			
-		</div>
-		<div class="col-md-4" style="height: 400px;">
-			<div class="bodytab">
-				<div class="tabcell" style="height: 400px;">
-				<div class="reg" >
-					<a href="register.html">Register</a>
-				</div>
-					
-				</div>
+		<div class="col-md-12">
+			<div class="editr">
+				<form class="codesub">
+					<pre id="editor">
+					function foo(items) {
+					    var i;
+					    for (i = 0; i &lt; items.length; i++) {
+					        alert("Ace Rocks " + items[i]);
+					    }
+					}
+					</pre>
+					<button type="submit">Submit Code</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -49,6 +44,13 @@
 			Site Designed by : <a href="https://therohith.com">Rohith</a>
 		</div>
 	</div>
+
+	<script src="editor/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	    var editor = ace.edit("editor");
+	    editor.setTheme("ace/theme/chrome");
+	    editor.session.setMode("ace/mode/c_cpp");
+	</script>
 
 </body>
 </html>

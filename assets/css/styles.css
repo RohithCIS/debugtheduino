@@ -18,7 +18,7 @@ body{
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #00979D;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -29,15 +29,15 @@ body{
 }
 
 .topnav a:hover {
-  background-color: #fff;
-  color: #00959C;
+  background-color: #00979D;
+  color: #ffffff;
   text-decoration: none;
   transition: 0.5s;
 }
 
 .topnav a.active {
-    background-color: #f2f2f2;
-    color: #00959C;
+    background-color: #00979D;
+    color: #ffffff;
 }
 
 .topnav a:focus{
@@ -61,19 +61,19 @@ body{
 
 .homeheader{
 	height: 15vh;
-	color: white;
+	color: #00979D;
 	font-family: 'Consolas', monospace;
-	border-bottom: 2px solid #f2f2f2;
+	border-bottom: 2px solid #00979D;
 	display: block;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background-color: #00959C;
+	background-color: #fff;
 	z-index: 5;
 }
 
 .tit{
-	color: white;
+	color: #00979D;
 	font-family: 'Consolas', monospace;
 	display: inline-block;
 	padding: 20px;
@@ -87,14 +87,14 @@ body{
 
 .logos{
 	text-align: left;
-	color: #00959C;
+	color: #00979D;
 	font-family: 'Consolas', monospace;
 	font-size: 40px;
 	padding:15px;
 	margin: 20px;
 	margin-top: 50px;
 	border-radius: 10px;
-	background-color: #f2f2f2;
+	background-color: #ffffff;
 }
 
 .reg{
@@ -103,14 +103,14 @@ body{
 }
 
 .reg:hover{
-	color: #f2f2f2;
+	color: #ffffff;
 
 }
 
 .reg a{
 	text-decoration: none;
-	color: #00959C;
-	background-color: #f2f2f2;
+	color: #00979D;
+	background-color: #ffffff;
 	border-radius: 5px;
 	font-size: 50px;
 	padding: 20px;
@@ -118,8 +118,8 @@ body{
 
 .reg a:hover{
 	text-decoration: none;
-	color: #f2f2f2;
-	border: 2px solid #f2f2f2;
+	color: #ffffff;
+	border: 2px solid #ffffff;
 	background-color: transparent;
 }
 
@@ -153,12 +153,12 @@ body{
 	height: 50px;
 	width: 75%;
 	font-size: 20px;
-	color: #00959C;
+	color: #00979D;
 }
 
 .regform button{
-	background-color: #f2f2f2;
-	color: #00959C;
+	background-color: #ffffff;
+	color: #00979D;
 	border-radius: 5px;
 	border: none;
 	height: 50px;
@@ -168,9 +168,9 @@ body{
 }
 
 .regform button:hover{
-	color: #f2f2f2;
+	color: #ffffff;
 	background-color: transparent;
-	border: 2px solid #f2f2f2;
+	border: 2px solid #ffffff;
 }
 
 /*FOOTER*/
@@ -181,11 +181,54 @@ body{
 
 .fcont{
 	margin:20px;
-	background-color: #f2f2f2;
-	color: #00959C;
+	background-color: #ffffff;
+	color: #00979D;
 	border-radius: 10px;
 	height: 100%;
 	padding: 10px;
 	text-align: center;
 	font-family: 'Consolas', monospace;
+}
+
+/*EDITOR*/
+
+#editor {
+    margin: 0;
+    position: relative;
+    height: 60vh;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.editr{
+	text-align: left;
+	color: #00979D;
+	font-family: 'Consolas', monospace;
+	font-size: 40px;
+	padding:15px;
+	margin: 20px;
+	margin-top: 50px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	height: 100%;
+}
+
+.codesub button{
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #00979D;
+	border-radius: 5px;
+	font-size: 20px;
+	border: none;
+	padding: 10px;
+	display: inline-block;
+}
+
+.codesub button:hover{
+	text-decoration: none;
+	color: #00979D;
+	border: 2px solid #00979D;
+	background-color: transparent;
 }
