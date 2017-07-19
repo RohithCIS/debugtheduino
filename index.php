@@ -18,8 +18,8 @@
 		<h1 class="tit">DEBUG THE DUINO</h1>
 		<div class="topnav">
 			<a class="active" href="">Home</a>
-			<a href="login.html">Login</a>
-			<a href="register.html">Register</a>
+			<a href="pages/login.php">Login</a>
+			<a href="pages/register.php">Register</a>
 			<a href="">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
 		</div>
@@ -37,10 +37,10 @@
 			<div class="bodytab">
 				<div class="tabcell" style="height: 400px;">
 				<div class="reg" >
-					<a href="register.html">Register</a>
+					<a href="pages/register.php">Register</a>
 				</div><br><br><br><br>
 				<div class="reg" >
-					<a href="login.html">Login</a>
+					<a href="pages/login.php">Login</a>
 				</div>
 					
 				</div>

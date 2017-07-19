@@ -1,17 +1,21 @@
+<?php
+	if (isset($_SESSION)) {
+		session_unset();
+		session_destroy();
+	}
+	session_start();
+	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Debug the Duino</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Register : Debug The Duino</title>
+	<?php include $root.'/partials/head.php'; ?>
 </head>
 <body>
 	<div class="bghead"></div>
 	<div class="homeheader">
-		<h1 class="tit">Debug the Duino</h1>
+		<h1 class="tit">DEBUG THE DUINO</h1>
 		<div class="topnav">
 			<a href="index.html">Home</a>
 			<a href="login.html">Login</a>
