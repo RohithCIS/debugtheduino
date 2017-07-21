@@ -17,8 +17,8 @@
 	<div class="homeheader">
 		<h1 class="tit">DEBUG THE DUINO</h1>
 		<div class="topnav">
-			<a href="index.html">Home</a>
-			<a href="login.html">Login</a>
+			<a href="/">Home</a>
+			<a href="/pages/login.php">Login</a>
 			<a class="active" href=#>Register</a>
 			<a href="">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
@@ -29,7 +29,7 @@
 			<div class="bodytab">
 				<div class="tabcell">
 					<div>
-						<form class="regform" method="POST" action="#">
+						<form class="regform" method="POST" action="/functions/regdb.php">
 						<h2>Register</h2>
 							<input type="text" name="name" placeholder="Name" autofocus required><br>
 							<input type="email" name="email" placeholder="E-mail" required><br>

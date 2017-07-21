@@ -5,7 +5,10 @@
 	}
 	session_start();
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
+	include $root.'/functions/errorhandling.php';
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +20,9 @@
 	<div class="homeheader">
 		<h1 class="tit">DEBUG THE DUINO</h1>
 		<div class="topnav">
-			<a href="index.html">Home</a>
+			<a href="/">Home</a>
 			<a class="active" href=#>Login</a>
-			<a href="register.html">Register</a>
+			<a href="/pages/register.php">Register</a>
 			<a href="">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
 		</div>
@@ -29,10 +32,11 @@
 			<div class="bodytab">
 				<div class="tabcell">
 					<div>
-						<form class="regform" method="POST" action="#">
+						<form class="regform" method="POST" action="home.php">
 						<h2>Login</h2>
 							<input type="email" name="email" placeholder="E-mail" autofocus required><br>
 							<input type="password" name="pwd" placeholder="Password" required><br>
+							<label><?php echo $error_message;?></label>
 							<button type="submit">Login</button>
 						</form>
 					</div>

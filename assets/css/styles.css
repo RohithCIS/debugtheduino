@@ -232,3 +232,41 @@ body{
 	border: 2px solid #00979D;
 	background-color: transparent;
 }
+
+/*HOME*/
+
+.nameg{
+	background-color: #ffffff;
+	color: #00979D;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.abtn{
+	text-decoration: none;
+	color: white;
+	background-color: #00979D;
+	padding: 10px;
+	font-size: 25px;
+	border-radius: 5px;
+}
+
+.abtn:hover{
+	border: 2px solid #00979D;
+	background-color: transparent;
+	color: #00979D;
+	text-decoration: none;
+}
+
+.abtn:focus{
+	text-decoration: none;
+	color: #00959D;
+}
+
+.info{
+	color: #00979D;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 5px;
+}
