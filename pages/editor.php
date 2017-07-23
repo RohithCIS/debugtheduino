@@ -17,8 +17,8 @@
 	<div class="homeheader">
 		<h1 class="tit">DEBUG THE DUINO</h1>
 		<div class="topnav">
-			<a href="">Home</a>
-			<a href="">Contact</a><br><br>
+			<a href="/">Home</a>
+			<a href="/pages/contact.php">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
 		</div>
 	</div>
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 
-	<script src="editor/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/editor/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 	    var editor = ace.edit("editor");
 	    editor.setTheme("ace/theme/chrome");

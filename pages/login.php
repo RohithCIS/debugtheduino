@@ -4,6 +4,7 @@
 		session_destroy();
 	}
 	session_start();
+	$error_message="";
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
 	include $root.'/functions/errorhandling.php';
 
@@ -16,6 +17,7 @@
 	<?php include $root.'/partials/head.php'; ?>
 </head>
 <body>
+
 	<div class="bghead"></div>
 	<div class="homeheader">
 		<h1 class="tit">DEBUG THE DUINO</h1>
@@ -23,7 +25,7 @@
 			<a href="/">Home</a>
 			<a class="active" href=#>Login</a>
 			<a href="/pages/register.php">Register</a>
-			<a href="">Contact</a><br><br>
+			<a href="/pages/contact.php">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
 		</div>
 	</div>
@@ -44,15 +46,8 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="footerc">
-		<div class="fcont">
-			&copy;2017 Debug the Duino<br>
-			TechnoVIT<br>
-			VIT University Chennai Campus<br>
-			Site Designed by : <a href="https://therohith.com">Rohith</a>
-		</div>
-	</div>
+	
+	<?php include $root.'/partials/footer.php'; ?>
 	
 </body>
 </html>

@@ -57,28 +57,28 @@
 	</div>
 	<div class="homebody">
 		<div class="col-md-4">
-		</div>
-		<div class="col-md-4">
-		</div>
-		<div class="col-md-4">
 			<div class="bodytab">
 				<div class="tabcell">
 					<div>
-						<h2 class="nameg"></h2>
+						<form class="regform" action="/functions/upload.php" method="post" enctype="multipart/form-data">
+						    <h3>Upload Answer for Question 1:</h3>
+						    <input type="file" name="fileToUpload" id="fileToUpload">
+						    <input type="hidden" value="<?php echo $name; ?>" name="name">
+						    <input type="hidden" value="[1]" name="quest">
+						    <button type="submit" name="submit">Submit Answer</button>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="footerc">
-		<div class="fcont">
-			&copy;2017 Debug the Duino<br>
-			TechnoVIT<br>
-			VIT University Chennai Campus<br>
-			Site Designed by : <a href="https://therohith.com">Rohith</a>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
 		</div>
 	</div>
+
+
+	<?php include $root.'/partials/footer.php'; ?>
 	
 </body>
 </html>

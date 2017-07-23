@@ -20,12 +20,12 @@
 			<a href="/">Home</a>
 			<a href="/pages/login.php">Login</a>
 			<a class="active" href=#>Register</a>
-			<a href="">Contact</a><br><br>
+			<a href="/pages/contact.php">Contact</a><br><br>
 			<h2>TechnoVIT Chennai</h2>
 		</div>
 	</div>
 	<div class="homebody">
-		<div class="col-md-4">
+		<div class="col-md-4 col-sm-12 col-xs-12">
 			<div class="bodytab">
 				<div class="tabcell">
 					<div>
@@ -44,14 +44,6 @@
 		</div>
 	</div>
 
-	<div class="footerc">
-		<div class="fcont">
-			&copy;2017 Debug the Duino<br>
-			TechnoVIT<br>
-			VIT University Chennai Campus<br>
-			Site Designed by : <a href="https://therohith.com">Rohith</a>
-		</div>
-	</div>
-
+	<?php include $root.'/partials/footer.php'; ?>
 </body>
 </html>
