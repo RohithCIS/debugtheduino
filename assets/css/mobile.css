@@ -154,6 +154,11 @@ body{
 	width: 95%;
 	font-size: 20px;
 	color: #00979D;
+	border: solid 2px #00959D;
+}
+
+.regform input[type=file]{
+	color: white;
 }
 
 .regform button{
@@ -165,6 +170,7 @@ body{
 	width: 75%;
 	margin: 15px;
 	font-size: 25px;
+	border: solid 2px #00959D;
 }
 
 .regform button:hover{
@@ -354,4 +360,31 @@ body{
     color: #0296FF;
     transition: 0.5s;
     border: solid 2px #111;
+}
+
+/*TABLE*/
+
+table{
+	/*padding: 20px;*/
+	margin-top: 50px;
+	background-color: #fff;
+	color: #00959D;
+	font-family: 'Consolas', monospace;
+	border-radius: 5px;
+	display: inline-block;
+	border: 1px solid #00959D;
+}
+
+th{
+	background-color: #00959D;
+	color: white;
+	padding: 5px;
+	border-left: 1px solid #00959D;
+	border-right: 1px solid #00959D;
+}
+
+td{
+	padding: 5px;
+	border-left: 1px solid #00959D;
+	border-right: 1px solid #00959D;
 }

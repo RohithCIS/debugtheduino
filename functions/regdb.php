@@ -25,10 +25,55 @@
 	$year=$_POST["year"];
 	$pwd=randomPassword();
 
+	$mess= 'Hi, '.$name."\n\nYour E-mail : ".$email."\nYour Password : ".$pwd."\n\nUse your registered E-mail and this Password to Login at debugtheduino.com/pages/login.php\nPlease remember this password as it can't be changed. Write to us in case you accidentally lost this password.";
+
+
+// MAILER
+	date_default_timezone_set('Etc/UTC');
+
+	include('/usr/share/php/libphp-phpmailer/class.phpmailer.php');
+	include('/usr/share/php/libphp-phpmailer/class.smtp.php');
+
+	$mail = new PHPMailer;
+
+	$mail->isSMTP();
+
+	$mail->SMTPDebug = 0;
+
+	$mail->Host = 'smtp.gmail.com';
+
+	$mail->Port = 587;
+
+	$mail->SMTPSecure = 'tls';
+
+	$mail->SMTPAuth = true;
+	//Username to use for SMTP authentication - use full email address for gmail
+	$mail->Username = "debugtheduino@gmail.com";
+	//Password to use for SMTP authentication
+	$mail->Password = "ded@du1n0";
+	//Set who the message is to be sent from
+	$mail->setFrom( 'debugtheduino@gmail.com' , 'Debug The Duino Support' );
+	//Set an alternative reply-to address
+	// $mail->addReplyTo($from, $name);
+	//Set who the message is to be sent to
+	$mail->addAddress($email, $name);
+
+	$mail->Subject = "Login Details for Debug the Duino";
+
+	$mail->Body = $mess;
+
 	$sql = "INSERT INTO USERS (NAME,EMAIL,PHONE,CLG,YEAR,PWD) VALUES ('".$name."','".$email."','".$phone."','".$clg."',".$year.",'".$pwd."');";
+	
+	$err = "";
+
+	if (!$mail->send()) {
+	    $err = "Sorry, There's been some trouble. Try again please. " . $mail->ErrorInfo;
+	} else {
+	    $err = "Password Sent to your registered E-mail";
+	}
 
 	if ($db->query($sql)===TRUE) {
-		$err="Registered Successfully!";
+		$err1="Registered Successfully!";
         }
     else{
     	header('Location: /pages/login.php?error_code=PWD');
@@ -63,8 +108,8 @@
 			<div class="bodytab">
 					<div class="tabcell">
 						<div>
-							<h2 class="nameg"><?php echo $err; ?></h2>
-							<p class="info">Password has been sent to your Registered Mail<br><br>
+							<h2 class="nameg"><?php echo $err1; ?></h2>
+							<p class="info"><?php echo $err; ?><br><br>
 							<a class="abtn" href="/pages/login.php">Login</a></p>
 						</div>
 					</div>
