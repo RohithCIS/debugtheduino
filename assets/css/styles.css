@@ -85,11 +85,29 @@ body{
 	height: 85vh;
 }
 
+.homebody1{
+	margin-top: 15vh;
+	overflow: hidden;
+	/*height: 85vh;*/
+}
+
 .logos{
 	text-align: left;
 	color: #00979D;
 	font-family: 'Consolas', monospace;
 	font-size: 40px;
+	padding:15px;
+	margin: 20px;
+	margin-top: 50px;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+.logoc{
+	text-align: left;
+	color: #00979D;
+	font-family: 'Consolas', monospace;
+	font-size: 20px;
 	padding:15px;
 	margin: 20px;
 	margin-top: 50px;
@@ -316,4 +334,12 @@ td{
 	padding: 8px;
 	border-left: 1px solid #00959D;
 	border-right: 1px solid #00959D;
+}
+
+.scroller_anchor{
+	/*height: 15vh;*/
+}
+
+.scroller{
+	/*transition: 0.5s;*/
 }

@@ -7,7 +7,7 @@
 	</div>
 
 
-	<div class="footerc">
+	<div class="col-md-12 col-sm-12 col-xs-12 footerc">
 		<div class="fcont">
 			&copy;2017 Debug the Duino<br>
 			TechnoVIT<br>

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register : Debug The Duino</title>
+	<title>Contact : Debug The Duino</title>
 	<?php include $root.'/partials/head.php'; ?>
 </head>
 <body>
@@ -28,8 +28,10 @@
 		<div class="col-md-4 col-sm-12 col-xs-12">
 			<div class="logos">
 			<strong>Organisers</strong>
-				<p style="font-size: 25px;">Sambhav Jain<br>Bharath</p>
-				<strong>ConnectiVITeee<br>TechnoVIT</strong>
+				<p style="font-size: 25px;">Sambhav: 9940224226<br>Bharath: 9940346483</p>
+			</div>
+			<div class="logos">	
+				<img height="150px" src="../../assets/img/technovit.jpg">
 			</div>
 		</div>
 		<div class="col-md-4 col-sm-12 col-xs-12">
@@ -39,6 +41,9 @@
 			<div class="logos">
 				<strong>Website Help</strong>
 				<p style="font-size: 20px;">Rohith : <br>b.rohith2015@vit.ac.in<br>+91 8110960609</p>
+			</div>
+			<div class="logos">
+				<img width="100%" src="../../assets/img/connectivitiee.png">
 			</div>
 		</div>
 	</div>

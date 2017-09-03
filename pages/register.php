@@ -24,7 +24,7 @@
 			<h2>TechnoVIT Chennai</h2>
 		</div>
 	</div>
-	<div class="homebody">
+	<div class="homebody1">
 		<div class="col-md-4 col-sm-12 col-xs-12">
 			<div class="bodytab">
 				<div class="tabcell">
@@ -40,6 +40,20 @@
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="col-md-8 col-sm-12 col-xs-12">
+			<div class="logoc">
+				<p><strong style="font-size: 40px;">Rules</strong><br>
+					<br>&#8226; This is an individual event.
+					<br>&#8226; As soon a participant registers for round A ,he/she will be give a unique username and password to attend Round A.
+					<br>&#8226; Participants are requested not to share their username and passwords.
+					<br>&#8226; The quiz consists of 2 rounds: Round A and Round B.
+					<br>&#8226; Round A consists  of 15 MCQ’s ,each consisting of ONE point each.
+					<br>&#8226; Round B consists of coding tasks ,each valuing 10 points.
+					<br>&#8226; All the rounds are timed.
+					<br>&#8226; Top 25% of the participants will be selected for round B based on the correctness and how fast they complete Round A.
+					<br>&#8226; Separate email will be sent to the selected participants on details regarding Round B.</p>
 			</div>
 		</div>
 	</div>
