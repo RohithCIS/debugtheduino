@@ -46,6 +46,18 @@ body{
     color: white;
 }
 
+.homeheader img{
+	height: 100px;
+	cursor: pointer;
+	
+}
+
+.imgl{
+	display: none;
+	visibility: hidden;
+
+}
+
 /*HOME*/
 
 .bghead{

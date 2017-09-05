@@ -12,7 +12,7 @@
 			&copy;2017 Debug the Duino<br>
 			TechnoVIT<br>
 			VIT University Chennai Campus<br>
-			Site Designed by : <a href="https://therohith.com">Rohith</a>
+			Site Designed by : <a href="https://therohith.com" target="_">Rohith</a>
 		</div>
 	</div>
 

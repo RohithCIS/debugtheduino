@@ -21,12 +21,16 @@
 	<div class="bghead"></div>
 	<div class="homeheader">
 		<h1 class="tit">DEBUG THE DUINO</h1>
+		<div class="imgl">
+			<a href="http://technovitchennai.com" target="_"><img src="../../assets/img/technovit.png"></a>
+			<a href="http://technovitchennai.com/connectivitieee/index.html" target="_"><img src="../../assets/img/connectivitiee.png"></a>
+		</div>
 		<div class="topnav">
 			<a href="/">Home</a>
 			<a class="active" href=#>Login</a>
 			<a href="/pages/register.php">Register</a>
 			<a href="/pages/contact.php">Contact</a><br><br>
-			<h2>TechnoVIT Chennai</h2>
+			<!-- <h2>TechnoVIT Chennai</h2> -->
 		</div>
 	</div>
 	<div class="homebody">

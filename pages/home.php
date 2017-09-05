@@ -50,6 +50,10 @@
 	<div class="bghead"></div>
 	<div class="homeheader">
 		<h1 class="tit">DEBUG THE DUINO</h1>
+		<div class="imgl">
+			<a href="http://technovitchennai.com" target="_"><img src="../../assets/img/technovit.png"></a>
+			<a href="http://technovitchennai.com/connectivitieee/index.html" target="_"><img src="../../assets/img/connectivitiee.png"></a>
+		</div>
 		<div class="topnav">
 			<a href="/">Logout</a>
 			<br><br>

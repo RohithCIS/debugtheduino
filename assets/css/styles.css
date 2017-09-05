@@ -45,6 +45,19 @@ body{
     color: white;
 }
 
+.homeheader img{
+	height: 100px;
+	cursor: pointer;
+	
+}
+
+.imgl{
+	position: fixed;
+	top 0;
+	display: inline-block;
+
+}
+
 /*HOME*/
 
 .bghead{
