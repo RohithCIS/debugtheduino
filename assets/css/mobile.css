@@ -142,7 +142,7 @@ body{
 	color: #00979D;
 	background-color: #ffffff;
 	border-radius: 5px;
-	font-size: 50px;
+	font-size: 40px;
 	padding: 10px;
 }
 
@@ -426,4 +426,45 @@ td{
 .scroller{
 	display: none;
 	visibility: hidden;
+}
+
+#rnda{
+	visibility: hidden;
+}
+#rndb{
+	visibility: hidden;
+}
+
+.regn a{
+	text-decoration: none;
+	color: #fff;
+	background-color: #00979C;
+	border-radius: 5px;
+	font-size: 40px;
+	padding: 10px;	
+	border: 2px solid #ffffff;
+}
+
+.regn a:hover{
+	text-decoration: none;
+	color: #00979C;
+	border: 2px solid #00979C;
+	background-color: transparent;
+}
+
+.qform button{
+	background-color: #00979D;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	height: 50px;
+	width: 75%;
+	margin: 15px;
+	font-size: 25px;
+}
+
+.qform button:hover{
+	color: #00979D;
+	background-color: transparent;
+	border: 2px solid #00979D;
 }

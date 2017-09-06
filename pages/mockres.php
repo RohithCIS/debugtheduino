@@ -3,43 +3,6 @@
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
 	include $root.'/functions/db.php';
 
-	$err="";
-	$pass="";
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$pwd=$_SESSION["tomato"];
-		$email=$_SESSION["email"];
-
-		$sql="SELECT NAME,EMAIL,PWD FROM USERS WHERE EMAIL='".$email."';";
-
-		$result = $db->query($sql);
-
-		if ($result->num_rows > 0) {
-	        // output data of each row
-	        while($row = $result->fetch_assoc()) {
-	            $pass=$row["PWD"];
-	            $email=$row["EMAIL"];
-	            $name=$row["NAME"];
-	        }
-	    } 
-	    else {
-	        echo "0";
-	    }
-
-	    if ($pwd==$pass) {
-	    	$err="";
-	    }
-	    else{
-	    	header('Location: /pages/login.php?error_code=PWD');
-	    	exit();
-	    }
-
-	    $db->close();
-	}
-	else{
-    	header('Location: /pages/login.php?error_code=PWD');
-    	exit();
-    }
-
     $a1 = $_POST['q1'];
 	$a2 = $_POST['q2'];
 	$a3 = $_POST['q3'];
@@ -69,7 +32,7 @@
 		<div class="topnav">
 			<a href="/">Logout</a>
 			<br><br>
-			<h2>Hi, <?php echo $name; ?> </h2>
+			<h2>Hi </h2>
 		</div>
 	</div>
 	<div class="homebody">

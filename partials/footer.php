@@ -10,7 +10,7 @@
 	<div class="col-md-12 col-sm-12 col-xs-12 footerc">
 		<div class="fcont">
 			&copy;2017 Debug the Duino<br>
-			TechnoVIT<br>
+			connectiVITieee | technoVIT<br>
 			VIT University Chennai Campus<br>
 			Site Designed by : <a href="https://therohith.com" target="_">Rohith</a>
 		</div>

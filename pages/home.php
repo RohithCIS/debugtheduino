@@ -30,6 +30,9 @@
 
 	    if ($pwd==$pass) {
 	    	$err="";
+			$_SESSION["uname"]=$name;
+			$_SESSION["tomato"]=$pass;
+			$_SESSION["email"]=$email;
 	    }
 	    else{
 	    	header('Location: /pages/login.php?error_code=PWD');
@@ -65,19 +68,16 @@
 			<div class="bodytab">
 				<div class="tabcell" style="height: 400px;">
 					<div>
-						<form class="regform" action="/pages/rnda.php" method="post" enctype="multipart/form-data">
-						    <input type="hidden" value="<?php echo $name; ?>" name="name">
-						    <input type="hidden" value="<?php echo $email; ?>" name="email">
-						    <input type="hidden" value="<?php echo $pwd; ?>" name="pwd">
-						    <button type="submit" name="submit">Round A</button>
+						<form class="regform" action="rnda.php" method="post" enctype="multipart/form-data"> <!--/pages/rnda.php -->
+						    <button id="rnda" type="submit" name="submit">Round A</button>
 						</form>
 					</div>
-					<br><br>
+					<br><br><h4 id="ctd" style="color: #fff; font-size: 35px;background-color: #00979D"></h4>
 					<div>
-						<form class="regform" action="/pages/rndb.php" method="post" enctype="multipart/form-data">
+						<form class="regform" action="" method="post" enctype="multipart/form-data"> <!--/pages/rndb.php-->
 						    <input type="hidden" value="<?php echo $name; ?>" name="name">
 						    <input type="hidden" value="[1]" name="quest">
-						    <button type="submit" name="submit">Round B</button>
+						    <button id="rndb" type="submit" name="submit">Round B</button>
 						</form>
 					</div> 
 				</div>
@@ -120,6 +120,29 @@
 
 
 	<?php include $root.'/partials/footer.php'; ?>
-	
+<script type="text/javascript">
+	var countDownDate = new Date("Sep 11, 2017 09:00:00").getTime();
+
+	var xinter = setInterval(function() {
+
+	  var now = new Date().getTime();
+
+	  var distance = countDownDate - now;
+
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  document.getElementById("ctd").innerHTML = "Round A opens in <br>" + days + "d " + hours + "h "
+	  + minutes + "m " + seconds + "s";
+
+	  if (distance < 0) {
+	    clearInterval(xinter);
+	    document.getElementById("ctd").innerHTML = "Round A is Open!";
+	    document.getElementById("rnda").style.visibility = "visible";
+	  }
+	}, 1000);
+</script>
 </body>
 </html>

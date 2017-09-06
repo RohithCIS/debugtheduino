@@ -33,6 +33,8 @@
 			<div class="logos">
 			<strong>Organisers</strong>
 				<p style="font-size: 25px;">Sambhav: 9940224226<br>Bharath: 9940346483</p>
+			<strong>Faculty Organiser</strong>
+				<p style="font-size: 25px;">Prof. Prakash V</p>
 			</div>
 			<div class="logos">	
 				<img width="100%" src="../../assets/img/technovit.png">

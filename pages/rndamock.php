@@ -2,43 +2,6 @@
 	session_start();
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
 	include $root.'/functions/db.php';
-
-	$err="";
-	$pass="";
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$pwd=$_SESSION["tomato"];
-		$email=$_SESSION["email"];
-
-		$sql="SELECT NAME,EMAIL,PWD FROM USERS WHERE EMAIL='".$email."';";
-
-		$result = $db->query($sql);
-
-		if ($result->num_rows > 0) {
-	        // output data of each row
-	        while($row = $result->fetch_assoc()) {
-	            $pass=$row["PWD"];
-	            $email=$row["EMAIL"];
-	            $name=$row["NAME"];
-	        }
-	    } 
-	    else {
-	        echo "0";
-	    }
-
-	    if ($pwd==$pass) {
-	    	$err="";
-	    }
-	    else{
-	    	header('Location: /pages/login.php?error_code=PWD');
-	    	exit();
-	    }
-
-	    $db->close();
-	}
-	else{
-    	header('Location: /pages/login.php?error_code=PWD');
-    	exit();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -58,14 +21,14 @@
 		<div class="topnav">
 			<a href="/">Logout</a>
 			<br><br>
-			<h2>Hi, <?php echo $name; ?> </h2>
+			<h2>Hi </h2>
 		</div>
 	</div>
 	<div class="homebody">
 		<div class="col-md-8 col-sm-12 col-xs-12">
 			<div class="logoc">
-				<form action="rndares.php" method="post" id="quiz" class="qform">
-					<h1>Warning : Do not Press Back or Reload the Page! Safely logout or Finish the test! Failure to do so will retain you from participating Further in the Event!</h1>
+				<form action="mockres.php" method="post" id="quiz" class="qform">
+					<h1>Warning : Do not Press Back or Reload the Page! Safely logout or Finish the test! Failure to do so will retain you from participating Further in the Event!</h1><br><br>
 					<h3>1. What does the following code snippet do?</h3>
 					<img src="../../assets/img/dtd/q1.png">
 					<div>
@@ -105,7 +68,7 @@
 					</div>
 					<br>
 					<h3>3. A gas sensor (3 pin ) is interfaced with Uno R3. What is wrong in the following circuit ?</h3>
-					<img src="../../assets/img/dtd/q3.png">
+					<img style="width: 75%;" src="../../assets/img/dtd/q3.png">
 					<div>
 					<input type="radio" name="q3" id="q3a" value="A" />
 					<label for="q3a">A) There is nothing wrong with the circuit</label>
@@ -120,7 +83,7 @@
 					</div>
 					<div>
 					<input type="radio" name="q3" id="q3d" value="D" />
-					<label for="q3d">D) Both 2 & 3 </label>
+					<label for="q3d">D) Both B & C </label>
 					</div>
 					<button type="submit">Finish Test</button>
 				</form>
