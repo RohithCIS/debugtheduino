@@ -221,7 +221,7 @@ body{
 	background-color: #ffffff;
 	color: #00979D;
 	border-radius: 10px;
-	height: 100%;
+	height: auto;
 	padding: 10px;
 	text-align: center;
 	font-family: 'Consolas', monospace;
@@ -427,4 +427,29 @@ td{
 	color: #00979D;
 	background-color: transparent;
 	border: 2px solid #00979D;
+}
+
+.imgspe{
+	width: 50%;
+}
+
+.timer{
+	top: 200px;
+}
+
+.anavi {
+	text-decoration: none;
+	color: #00979D;
+	background-color: #ffffff;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 10px;	
+	border: 2px solid #ffffff;
+}
+
+.anavi:hover{
+	text-decoration: none;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	background-color: transparent;
 }

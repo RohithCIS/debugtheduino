@@ -6,13 +6,25 @@
 	session_start();
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
 	include $root.'/functions/db.php';
+
+	function randomSet() {
+	    $alphabet = 'abc';
+	    $pass = array(); //remember to declare $pass as an array
+	    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+	        $n = rand(0, $alphaLength);
+	        $pass[] = $alphabet[$n];
+	    return implode($pass); //turn the array into a string
+	}
+	$set=randomSet();
+	$linka="rndaa.php";
+
 	$err="";
 	$pass="";
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$pwd=$_POST["pwd"];
 		$email=$_POST["email"];
 
-		$sql="SELECT NAME,EMAIL,PWD FROM USERS WHERE EMAIL='".$email."';";
+		$sql="SELECT NAME,EMAIL,PWD,A FROM USERS WHERE EMAIL='".$email."';";
 
 		$result = $db->query($sql);
 
@@ -22,6 +34,7 @@
 	            $pass=$row["PWD"];
 	            $email=$row["EMAIL"];
 	            $name=$row["NAME"];
+	            $astat=$row["A"];
 	        }
 	    } 
 	    else {
@@ -68,13 +81,13 @@
 			<div class="bodytab">
 				<div class="tabcell" style="height: 400px;">
 					<div>
-						<form class="regform" action="rnda.php" method="post" enctype="multipart/form-data"> <!--/pages/rnda.php -->
+						<form class="regform" action="<?php echo $linka; ?>" method="post" enctype="multipart/form-data"> <!--/pages/rnda.php -->
 						    <button id="rnda" type="submit" name="submit">Round A</button>
 						</form>
 					</div>
 					<br><br><h4 id="ctd" style="color: #fff; font-size: 35px;background-color: #00979D"></h4>
 					<div>
-						<form class="regform" action="" method="post" enctype="multipart/form-data"> <!--/pages/rndb.php-->
+						<form class="regform" action="rndb.php" method="post" enctype="multipart/form-data"> <!--/pages/rndb.php-->
 						    <input type="hidden" value="<?php echo $name; ?>" name="name">
 						    <input type="hidden" value="[1]" name="quest">
 						    <button id="rndb" type="submit" name="submit">Round B</button>
@@ -121,7 +134,9 @@
 
 	<?php include $root.'/partials/footer.php'; ?>
 <script type="text/javascript">
-	var countDownDate = new Date("Sep 11, 2017 09:00:00").getTime();
+
+	var aStatus = "<?php echo $astat; ?>";
+	var countDownDate = new Date("Sep 9, 2017 18:35:00").getTime();
 
 	var xinter = setInterval(function() {
 
@@ -140,9 +155,16 @@
 	  if (distance < 0) {
 	    clearInterval(xinter);
 	    document.getElementById("ctd").innerHTML = "Round A is Open!";
-	    document.getElementById("rnda").style.visibility = "visible";
 	  }
+		if (aStatus=="NO" && distance<0){
+			document.getElementById("rnda").style.visibility = "visible";
+		}
+		if (aStatus=="YES"){
+			document.getElementById("ctd").innerHTML = "You have completed<br>Round A<br><br>Round B opens<br>on 16th";
+		}
 	}, 1000);
+
+	
 </script>
 </body>
 </html>

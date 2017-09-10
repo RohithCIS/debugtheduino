@@ -7,7 +7,7 @@
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
 	include $root.'/functions/db.php';
 
-		$sql="SELECT * FROM USERS;";
+		$sql="SELECT * FROM MARKS;";
 
 		$result = $db->query($sql);
 
@@ -42,18 +42,19 @@
 		
 	</div>
 	<div class="homebody1">
-	<h2 style="color: white;">Registrations : <?php echo $result->num_rows; ?></h2>
-	<a class="anavi" href="/pages/rounds.php" target="_">View Attempts</a>
+	<h2 style="color: white;">Attempts : <?php echo $result->num_rows; ?></h2>
 		<div class="bodytab">
 			<div class="tabcell">
 				<table class="tdytab">
 			        <tr>
 			            <th>Name</th>
 			            <th>E-Mail</th>
-			            <th>Password</th>
-			            <th>Phone</th>
-			            <th>College</th>
-			            <th>Year</th>
+			            <th>A</th>
+			            <th>A Time</th>
+			            <th>A Marks</th>
+			            <th>B</th>
+			            <th>B Time</th>
+			            <th>B Marks</th>
 			        </tr>
 			        <?php
 			            if ($result->num_rows > 0) {
@@ -62,10 +63,12 @@
 			                    echo "  <tr>
 			                                <td>".$row["NAME"]."</td>
 			                                <td>".$row["EMAIL"]."</td>
-			                                <td>".$row["PWD"]."</td>
-			                                <td>".$row["PHONE"]."</td>
-			                                <td>".$row["CLG"]."</td>
-			                                <td>".$row["YEAR"]."</td>
+			                                <td>".$row["A"]."</td>
+			                                <td>".$row["ATIME"]."</td>
+			                                <td>".$row["AMAR"]."</td>
+			                                <td>".$row["B"]."</td>
+			                                <td>".$row["BTIME"]."</td>
+			                                <td>".$row["BMAR"]."</td>
 			                            </tr>";
 			                }
 			            } else {

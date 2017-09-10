@@ -46,7 +46,7 @@
 		<div class="col-md-4 col-sm-12 col-xs-12">
 			<div class="logos">
 				<strong>Website Help</strong>
-				<p style="font-size: 20px;">Rohith : <br>b.rohith2015@vit.ac.in<br>+91 8110960609</p>
+				<p style="font-size: 20px;">Rohith : <br>debugtheduino@gmail.com<br>+91 8110960609</p>
 			</div>
 			<div class="logos">
 				<img width="100%" src="../../assets/img/connectivitiee.png">

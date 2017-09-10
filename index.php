@@ -5,6 +5,7 @@
 	}
 	session_start();
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
+	include $root.'/functions/db.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,7 +49,7 @@
 				<div class="reg" >
 					<a href="pages/login.php">Login</a>
 				</div><br><br>
-					<h4 style="color: #fff;" id="ctd"></h4>
+					<h4 style="color: #fff; font-size: 30px;" id="ctd"></h4>
 				</div>
 			</div>
 		</div>

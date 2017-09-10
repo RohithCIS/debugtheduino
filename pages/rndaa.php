@@ -2,9 +2,12 @@
 	session_start();
 	include realpath($_SERVER["DOCUMENT_ROOT"]).'/functions/config.php';
 	include $root.'/functions/db.php';
+	include $root.'/partials/que.php';
+
+	$st=time();
 
 	$err="";
-	$pass="";
+	$pass="NULL";
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$pwd=$_SESSION["tomato"];
 		$email=$_SESSION["email"];
@@ -25,6 +28,10 @@
 	        echo "0";
 	    }
 
+	    if($pass=="NULL"){
+	    	header('Location: /pages/login.php?error_code=CHE');
+	    	exit();
+	    }
 	    if ($pwd==$pass) {
 	    	$err="";
 	    }
@@ -36,7 +43,7 @@
 	    $db->close();
 	}
 	else{
-    	header('Location: /pages/login.php?error_code=PWD');
+    	header('Location: /pages/login.php?error_code=LGN');
     	exit();
     }
 ?>
@@ -65,68 +72,24 @@
 		<div class="col-md-8 col-sm-12 col-xs-12">
 			<div class="logoc">
 				<form action="rndares.php" method="post" id="quiz" class="qform">
-					<h1>Warning : Do not Press Back or Reload the Page! Safely logout or Finish the test! Failure to do so will retain you from participating Further in the Event!</h1>
-					<h3>1. What does the following code snippet do?</h3>
-					<img src="../../assets/img/dtd/q1.png">
-					<div>
-					<input type="radio" name="q1" id="q1a" value="A" />
-					<label for="q1a">A) Toggle switches</label>
-					</div>
-					<div>
-					<input type="radio" name="q1" id="q1b" value="B" />
-					<label for="q1b">B) Toggle LEDs </label>
-					</div>
-					<div>
-					<input type="radio" name="q1" id="q1c" value="C" />
-					<label for="q1c">C) Both A&B </label>
-					</div>
-					<div>
-					<input type="radio" name="q1" id="q1d" value="D" />
-					<label for="q1d">D) None </label>
-					</div>
-					<br>
-					<h3>2. How long does the following program run?</h3>
-					<img src="../../assets/img/dtd/q2.png">
-					<div>
-					<input type="radio" name="q2" id="q2a" value="A" />
-					<label for="q2a">A) 4</label>
-					</div>
-					<div>
-					<input type="radio" name="q2" id="q2b" value="B" />
-					<label for="q2b">B) 10000</label>
-					</div>
-					<div>
-					<input type="radio" name="q2" id="q2c" value="C" />
-					<label for="q2c">C) Infinite </label>
-					</div>
-					<div>
-					<input type="radio" name="q2" id="q2d" value="D" />
-					<label for="q2d">D) Error in Program </label>
-					</div>
-					<br>
-					<h3>3. A gas sensor (3 pin ) is interfaced with Uno R3. What is wrong in the following circuit ?</h3>
-					<img src="../../assets/img/dtd/q3.png">
-					<div>
-					<input type="radio" name="q3" id="q3a" value="A" />
-					<label for="q3a">A) There is nothing wrong with the circuit</label>
-					</div>
-					<div>
-					<input type="radio" name="q3" id="q3b" value="B" />
-					<label for="q3b">B) The data pin should be connected to the analog pin</label>
-					</div>
-					<div>
-					<input type="radio" name="q3" id="q3c" value="C" />
-					<label for="q3c">C) There will be an error if one connects it to a digital pin</label>
-					</div>
-					<div>
-					<input type="radio" name="q3" id="q3d" value="D" />
-					<label for="q3d">D) Both 2 & 3 </label>
-					</div>
-					<button type="submit">Finish Test</button>
+					<h1>Warning : Please Do not Press Back or Reload the Page! Safely logout or Finish the test! Not Complying will retain you from participating Further in the Event!</h1><br>
+					
+					<?php 
+					    shuffle($qbase);
+					    for ($i=0; $i < 15; $i++) { 
+							echo ($i+1).".".$qbase[$i]."<br>";
+					    }
+					?>
+					<input type="hidden" name="st" value="<?php echo $st; ?>">
+					<button id="finishtest" type="submit">Finish Test</button>
 				</form>
 			</div>
 		</div>
+
 		<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="timer logoc">
+				<h3 style="color: #00979D;" id="ctd"></h3>
+			</div>
 			<div class="scroller_anchor">
 				
 			</div>
@@ -156,6 +119,12 @@
 	            'z-index': '-2'
 	        });
 
+	        $('.timer').css({
+	            'position': 'fixed',
+	            'top': '200px;',
+	            'z-index': '-1'
+	        });
+
 	        elem.style.transform = 'rotate(-' + deg + 'deg)';
 
 	        // $('.scroller_anchor').css('height', '15vh');
@@ -170,6 +139,34 @@
 	        });
 	    }
 	});
+
+	// function confirmExit()
+	// {
+	//  alert("You were asked not to REFRESH the page. You can take the test Again from the beginning.");
+	//  window.location.href='<?php echo $root; ?>';
+	//  return true;
+	// }
+	// window.onbeforeunload = confirmExit;
+	var dt = new Date().getTime();
+	var end = dt+3600000;
+	var xinter = setInterval(function() {
+
+		var ct = new Date().getTime();
+		var distance = end-ct;
+
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  document.getElementById("ctd").innerHTML = hours + "h "
+	  + minutes + "m " + seconds + "s Remaining";
+
+	  if (distance < 0) {
+	    clearInterval(xinter);
+	    document.getElementById("finishtest").click();
+	  }
+	}, 1000);
 </script>
 
 </body>

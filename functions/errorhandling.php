@@ -1,4 +1,6 @@
 <?php
+	
+	$error_message="";
 
 	if (isset($_GET['error_code'])) {
 		switch ($_GET['error_code']) {
@@ -11,12 +13,16 @@
 				$error_message = "Incorrect E-mail/Password";
 				break;
 
-			case 'TEMP':
-				$error_message = "Coming soon to your area";
+			case 'LGN':
+				$error_message = "Login Properly";
 				break;
 
-			case 'INCV':
-				$error_message = "Check input values and try again";
+			case 'SQL':
+				$error_message = "Database Error. Please Register Again! Sorry for the Incovenience.";
+				break;
+
+			case 'CHE':
+				$error_message = "You weren't supposed to Refresh!";
 				break;
 			
 			default:

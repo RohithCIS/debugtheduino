@@ -18,6 +18,13 @@
 	    return implode($pass); //turn the array into a string
 	}
 
+	$name="";
+	$email="";
+	$phone="";
+	$clg="";
+	$year="";
+	$pwd="";
+
 	$name=$_POST["name"];
 	$email=$_POST["email"];
 	$phone=$_POST["phone"];
@@ -25,8 +32,23 @@
 	$year=$_POST["year"];
 	$pwd=randomPassword();
 
+
 	$mess= 'Hi, '.$name."\n\nYour E-mail : ".$email."\nYour Password : ".$pwd."\n\nUse your registered E-mail and this Password to Login at debugtheduino.com/pages/login.php\nPlease remember this password as it can't be changed. Write to us in case you accidentally lost this password.";
 
+	$sql = 'INSERT INTO USERS (NAME,EMAIL,PHONE,CLG,YEAR,PWD,A,B) VALUES ("'.$name.'","'.$email.'","'.$phone.'","'.$clg.'","'.$year.'","'.$pwd.'","NO","NO");';
+	
+	$err = "";
+	
+	if ($db->query($sql)===TRUE) {
+		$err1="Registered Successfully!";
+		$link="/pages/login.php";
+        }
+    else{
+    	$err1="There has been an error! Please try Again";
+		// $link="/pages/register.php";
+    	header('Location: /pages/register.php?error_code=SQL');
+    	exit();
+    }
 
 // MAILER
 	date_default_timezone_set('Etc/UTC');
@@ -62,9 +84,7 @@
 
 	$mail->Body = $mess;
 
-	$sql = "INSERT INTO USERS (NAME,EMAIL,PHONE,CLG,YEAR,PWD) VALUES ('".$name."','".$email."','".$phone."','".$clg."',".$year.",'".$pwd."');";
 	
-	$err = "";
 
 	if (!$mail->send()) {
 	    $err = "Sorry, There's been some trouble. Try again please. " . $mail->ErrorInfo;
@@ -72,13 +92,7 @@
 	    $err = "Password Sent to your registered E-mail";
 	}
 
-	if ($db->query($sql)===TRUE) {
-		$err1="Registered Successfully!";
-        }
-    else{
-    	header('Location: /pages/login.php?error_code=PWD');
-    	exit();
-    }
+	
 	$db->close();
 ?>
 
@@ -110,7 +124,7 @@
 						<div>
 							<h2 class="nameg"><?php echo $err1; ?></h2>
 							<p class="info"><?php echo $err; ?><br><br>
-							<a class="abtn" href="/pages/login.php">Login</a></p>
+							<a class="abtn" href="<?php echo $link; ?>">Login</a></p>
 						</div>
 					</div>
 				</div>

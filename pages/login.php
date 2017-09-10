@@ -42,11 +42,20 @@
 						<h2>Login</h2>
 							<input type="email" name="email" placeholder="E-mail" autofocus required><br>
 							<input type="password" name="pwd" placeholder="Password" required><br>
-							<label><?php echo $error_message;?></label>
+							<label><?php echo $error_message;?></label><br>
 							<button type="submit">Login</button>
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="col-md-8 col-sm-12 col-xs-12">
+			<div class="logoc">
+				<p><strong style="font-size: 40px;">Info</strong><br>
+					Round A will be open for 3 days, from <strong>11th September to 13th September.</strong>  You can take the test anytime in between.<br><br>
+					The Results of Round A will subsequently be announced via EMail. Those who qualify for Round B will get an intimation.<br><br>
+					Digital Certificates can be Downloaded after results are announced.
+				</p>
 			</div>
 		</div>
 	</div>
